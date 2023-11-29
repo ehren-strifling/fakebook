@@ -1,0 +1,111 @@
+@charset "utf-8";
+@import url(./reset.css);
+
+:root {
+  --app-header-color: #303039;
+  --app-header-font-color: #f60862;
+  --app-header-height: 120px;
+	--app-profile-size: 40px;
+  --app-nav-collapse-size: 40px;
+
+	/* We need sidemargins on the header to make the nav bar centered. */
+	--app-header-side-margin: 160px;
+
+	--app-header-nav-hover: #202026;
+	--app-header-nav-hover-font: #f60862;
+
+
+  --app-background-color: #202026;
+  --app-font-color: #ffffff;
+}
+
+.container {
+  width: min(1080px, 100% - 30px);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+  align-items: center;  
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+body {
+	background-color: var(--app-background-color);
+}
+
+header {
+	height: var(--app-header-height);
+	line-height: var(--app-header-height);
+	background-color: var(--app-header-color);
+	color: var(--app-header-font-color);
+	overflow: hidden;
+}
+header * {
+	/* While responsiveness isn't a main focus. I refuse to just let elements line split and break the header completely. */
+	/* This makes everything inherit the header's height */
+	height: inherit;
+}
+
+header h1 {
+	width: var(--app-header-side-margin);
+}
+
+header nav {
+	margin-inline: auto;
+}
+
+header nav ul {
+	list-style: none;
+	display: flex;
+	font-size:20px;
+}
+
+header nav ul a {
+	padding-inline: 8px;
+	transition: all 0.25s;
+}
+
+header nav ul a:hover{
+	background-color: var(--app-header-nav-hover);
+	color: var(--app-header-nav-hover-font);
+}
+
+header .rightside {
+	display: flex;
+	margin-right: auto;
+	width: var(--app-header-side-margin);
+
+}
+header .user {
+	width:var(--app-profile-size);
+	height:var(--app-profile-size);
+	border-radius: 50%;
+	border: 1px solid #00000000;
+	
+	/* only works in flex containers by the way */
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-left: auto;
+
+	background-image: url("../img/profile.svg");
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+	cursor: pointer;
+	transition: border 0.25s;
+}
+
+header .user:hover {
+	border-color: var(--app-header-font-color);
+}
