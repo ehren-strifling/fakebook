@@ -1,5 +1,7 @@
 @charset "utf-8";
 @import url(./reset.css);
+@import url(./modal.css);
+@import url(./post.css);
 
 :root {
   --app-header-color: #303039;
@@ -17,6 +19,17 @@
 
   --app-background-color: #202026;
   --app-font-color: #ffffff;
+
+	--app-button-color-1: #f60962;
+	--app-button-hover-color-1: #c5064e;
+	--app-button-font-1: #ffffff;
+	
+	--app-button-color-2: #9d09f6;
+	--app-button-hover-color-2: #7e07c5;
+	--app-button-font-2: #ffffff;
+
+	--app-post-create-color: #303039;
+	--app-post-color: #ffffff;
 }
 
 .container {
@@ -41,6 +54,7 @@ a {
 
 body {
 	background-color: var(--app-background-color);
+	color: var(--app-font-color);
 }
 
 header {
@@ -71,8 +85,10 @@ header nav ul {
 }
 
 header nav ul a {
+	display: inline-block;
 	padding-inline: 8px;
 	transition: all 0.25s;
+	cursor: pointer; /* I have no clue why this is needed */
 }
 
 header nav ul a:hover{
@@ -108,4 +124,73 @@ header .user {
 
 header .user:hover {
 	border-color: var(--app-header-font-color);
+}
+
+.container2 {
+	width: 640px;
+	margin-inline: auto;
+}
+
+.create-post {
+	margin-top:60px;
+	background-color: var(--app-post-create-color);
+
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.create-post textarea {
+	background-color: inherit;
+	color: inherit;
+	resize: none;
+	padding: 15px;
+	width: 100%;
+	height: 200px;
+	font-size: 20px;
+}
+
+.create-post textarea::placeholder {
+	color: #ffffff40;
+}
+
+.create-post .create-footer {
+	margin:10px;
+	height: 40px;
+	display: flex;
+}
+
+.create-post .create-footer .image-input {
+	height: 40px;
+	line-height: 40px;
+	margin-left: 5px;
+}
+.create-post .create-footer .image-input::file-selector-button {
+	display: none;
+}
+.create-post .create-footer .image-input-button {
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	background-color: var(--app-button-color-1);
+	color: var(--app-button-font-1);
+	transition: color 0.25s;
+	border: none;
+}
+
+.create-post .image-input-button:hover {
+	background-color: var(--app-button-hover-color-1);
+}
+
+.create-post .create-footer .post-button {
+	margin-left: auto;
+	width: 80px;
+	height: 100%;
+	border-radius: 5px;
+	font-size: 20px;
+	background-color: var(--app-button-color-2);
+	color: var(--app-button-font-2);
+	transition: color 0.25s;
+}
+.create-post .create-footer .post-button:hover {
+	background-color:var(--app-button-hover-color-2);
 }

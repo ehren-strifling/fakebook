@@ -17,23 +17,33 @@
 
 	<link rel="stylesheet" href="./src/css/index.css">
 
-	<script src="src/scripts/fakebook.js" defer></script>
+	<script src="src/scripts/fakebook.js" type="module" defer></script>
 </head>
 <body>
 	<header>
 		<div class="container flex">
 			<h1 class="margin">fakebook</h1>
 			<nav><ul>
-				<a><li>friends</li></a>
-				<a><li>pages</li></a>
-				<a><li>groups</li></a>
-				<a><li>my ads</li></a>
-				<a><li>settings</li></a>
+				<li><a>friends</a></li>
+				<li><a>pages</a></li>
+				<li><a>groups</a></li>
+				<li><a>my&nbspads</a></li>
+				<li><a>settings</a></li>
 			</ul></nav>
 			<div class="rightside">
 				<div class="user margin"></div>
 			</div>
 		</div>
 	</header>
+	<main class="container2">
+		<div class="create-post">
+			<textarea placeholder="What's on your mind?"></textarea>
+			<div class="create-footer">
+				<label class="image-input-button" for="image-input">Add Image</label>
+				<input class="image-input" id="image-input" type="file" accept="image/png, image/jpeg, image/svg">
+				<button class="post-button">Post</button>
+			</div>
+		</div>
+	</main>
 </body>
 </html>
